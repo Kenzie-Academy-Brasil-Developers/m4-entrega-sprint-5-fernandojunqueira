@@ -6,7 +6,7 @@ import { PropertyToUser } from "../../entities/usersToProperties.entities"
 import { AppError } from "../../errors"
 import { IScheduleBody } from "../../interfaces/schedules"
 
-const createSchedulesService = async (payload:IScheduleBody,userId:string) => {
+const createSchedulesService = async (payload:IScheduleBody,userId:string):Promise<Object> => {
    
     const userRepo = AppDataSource.getRepository(User)
     const propertyRepo = AppDataSource.getRepository(Property)

@@ -2,7 +2,7 @@ import AppDataSource from "../../data-source";
 import { Category } from "../../entities/categories.entities";
 import { AppError } from "../../errors";
 
-const listCategoriesIdPropertiesService = async (categoryId:string) => {
+const listCategoriesIdPropertiesService = async (categoryId:string):Promise<Category> => {
     const categoryRepo = AppDataSource.getRepository(Category)
     const validId = await categoryRepo.findOneBy({id:categoryId })
 

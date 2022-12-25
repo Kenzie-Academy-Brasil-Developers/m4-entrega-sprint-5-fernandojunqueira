@@ -2,7 +2,7 @@ import AppDataSource from "../../data-source"
 import { User } from "../../entities/user.entities"
 import { AppError } from "../../errors"
 
-const deleteUserServices = async (id:string) => {
+const deleteUserService = async (id:string):Promise<void> => {
     const userRepo = AppDataSource.getRepository(User)
     const user = await userRepo.findOneBy({id:id})
     if(!user){
@@ -14,8 +14,6 @@ const deleteUserServices = async (id:string) => {
     user.isActive = false
     await userRepo.save(user)
 
-    return 'Tá chegando'
-
 }
 
-export default deleteUserServices
+export default deleteUserService

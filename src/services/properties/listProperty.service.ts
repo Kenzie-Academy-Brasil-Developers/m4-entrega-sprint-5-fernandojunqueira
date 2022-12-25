@@ -1,7 +1,7 @@
 import AppDataSource from "../../data-source"
 import { Property } from "../../entities/properties.entities"
 
-const listPropertyService = async () => {
+const listPropertyService = async ():Promise<Property[]> => {
    
     const propertyRepo =  AppDataSource.getRepository(Property)
 

@@ -1,3 +1,4 @@
+import { ICategory } from "../categories"
 
 export interface IAddressRequest {
     district: string
@@ -12,4 +13,11 @@ export interface IPropertyRequest {
     size: number
     address: IAddressRequest
     categoryId: string
+}
+
+export interface IPropertyReturn {
+    value: number
+    size: number
+    address: IAddressRequest
+    categoryId: ICategory
 }

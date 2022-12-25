@@ -4,7 +4,7 @@ import { AppError } from "../../errors";
 import { IUserResponse, IUserUpdate } from "../../interfaces/users";
 import { userWithoutPasswordSchema } from "../../schemas";
 
-const updateUserServices = async (userData: IUserUpdate, userId: string): Promise<IUserResponse> => {
+const updateUserService = async (userData: IUserUpdate, userId: string): Promise<IUserResponse> => {
 
     const userRepo = AppDataSource.getRepository(User)
 
@@ -25,4 +25,4 @@ const updateUserServices = async (userData: IUserUpdate, userId: string): Promis
     return updatedUserWithoutPassword
 }
 
-export default updateUserServices
+export default updateUserService

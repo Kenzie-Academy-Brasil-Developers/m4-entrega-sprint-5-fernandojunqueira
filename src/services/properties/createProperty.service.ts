@@ -3,9 +3,9 @@ import { Address } from "../../entities/adresses.entities"
 import { Category } from "../../entities/categories.entities"
 import { Property } from "../../entities/properties.entities"
 import { AppError } from "../../errors"
-import { IPropertyRequest } from "../../interfaces/properties"
+import { IPropertyRequest, IPropertyReturn } from "../../interfaces/properties"
 
-const createPropertyService = async ({value,size,address,categoryId}:IPropertyRequest) => {
+const createPropertyService = async ({value,size,address,categoryId}:IPropertyRequest):Promise<Property> => {
     
     const propertyRepo = AppDataSource.getRepository(Property)
     const categoryRepo = AppDataSource.getRepository(Category)

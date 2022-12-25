@@ -1,8 +1,9 @@
 import AppDataSource from "../../data-source"
 import { User } from "../../entities/user.entities"
+import { IUserResponse } from "../../interfaces/users"
 import { listUsers } from "../../schemas"
 
-const listUsersServices = async () => {
+const listUsersService = async ():Promise<IUserResponse[]> => {
     const userRepo = AppDataSource.getRepository(User)
     const users = await userRepo.find()
     
@@ -12,4 +13,4 @@ const listUsersServices = async () => {
     return usersWithoutPassword;
 }
 
-export default listUsersServices
+export default listUsersService

@@ -1,9 +1,9 @@
 import { Request, Response } from "express"
 import { IUserLogin } from "../interfaces/users"
-import { createSessionServices } from "../services"
+import { createSessionService } from "../services"
 
 export const createSessionController = async (req:Request,res:Response) => {
     const sessionData:IUserLogin = req.body
-    const token = await createSessionServices(sessionData)
+    const token = await createSessionService(sessionData)
     return res.json({token})
 }

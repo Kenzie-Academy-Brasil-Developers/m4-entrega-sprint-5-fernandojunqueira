@@ -3,7 +3,7 @@ import { User } from "../../entities/user.entities";
 import { IUserRequest, IUserResponse} from "../../interfaces/users";
 import { userWithoutPasswordSchema } from "../../schemas";
 
-const createUserServices = async (payload:IUserRequest): Promise<IUserResponse> => {
+const createUserService = async (payload:IUserRequest): Promise<IUserResponse> => {
 
     const userRepo = AppDataSource.getRepository(User)
     let user = userRepo.create(payload)
@@ -16,4 +16,4 @@ const createUserServices = async (payload:IUserRequest): Promise<IUserResponse> 
 
 }
 
-export default createUserServices
+export default createUserService

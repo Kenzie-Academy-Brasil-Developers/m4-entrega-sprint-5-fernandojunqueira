@@ -6,7 +6,7 @@ import { AppError } from "../../errors"
 import jwt from "jsonwebtoken"
 import "dotenv/config"
 
-const createSessionServices = async ({email,password}:IUserLogin):Promise<string> => {
+const createSessionService = async ({email,password}:IUserLogin):Promise<string> => {
     const userRepo = AppDataSource.getRepository(User)
     const user = await userRepo.findOneBy({email: email})
     
@@ -39,4 +39,4 @@ const createSessionServices = async ({email,password}:IUserLogin):Promise<string
     
 }
 
-export default createSessionServices
+export default createSessionService

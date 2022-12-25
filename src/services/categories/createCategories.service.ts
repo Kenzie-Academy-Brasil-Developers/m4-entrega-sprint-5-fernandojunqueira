@@ -3,7 +3,7 @@ import { Category } from "../../entities/categories.entities"
 import { AppError } from "../../errors"
 import { ICategoryRequest } from "../../interfaces/categories"
 
-const createCategoriesService = async (payload:ICategoryRequest) => {
+const createCategoriesService = async (payload:ICategoryRequest):Promise<Category> => {
    const categoryRepo = AppDataSource.getRepository(Category)
   
    const categoryVerify = await categoryRepo.findOneBy({name: payload.name})

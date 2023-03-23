@@ -6,7 +6,7 @@ import { AppError } from "../../errors"
 import { IPropertyRequest, IPropertyReturn } from "../../interfaces/properties"
 
 const createPropertyService = async ({value,size,address,categoryId}:IPropertyRequest):Promise<Property> => {
-    
+    console.log(value,size,address,categoryId)  
     const propertyRepo = AppDataSource.getRepository(Property)
     const categoryRepo = AppDataSource.getRepository(Category)
     const adressesRepo = AppDataSource.getRepository(Address)
@@ -37,7 +37,7 @@ const createPropertyService = async ({value,size,address,categoryId}:IPropertyRe
         value,
         size,
         address: addresses,
-        category: category    
+        category: category.name    
     })
    
 

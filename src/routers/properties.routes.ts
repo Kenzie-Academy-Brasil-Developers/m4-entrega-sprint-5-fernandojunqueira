@@ -4,7 +4,9 @@ import { checkIsAdmMiddleware, ensureAuthMiddleware } from "../middlewares";
 
 const propertiesRoutes = Router()
 
-propertiesRoutes.post("",ensureAuthMiddleware, checkIsAdmMiddleware, createPropertyController)
+propertiesRoutes.post("", createPropertyController)
 propertiesRoutes.get("",listPropertyController )
+
+//Apaguei do .post as funções checkIsAdmMiddleware e ensureAuthMiddleware pra fazer testes de aprendizado.
 
 export default propertiesRoutes
